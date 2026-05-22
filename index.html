@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lojinha da Isa ✨ Missangas Personalizadas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --rosa: #FF6B9D;
+      --lilas: #C77DFF;
+      --azul: #4CC9F0;
+      --verde: #56CFB0;
+      --amarelo: #FFD166;
+      --laranja: #FF9F43;
+      --bg: #FFF9F0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #FFE8F5 0%, #F0E8FF 35%, #E8F5FF 70%, #E8FFF5 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Bead decorations */
+    .beads-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .bead {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .bead::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 7px;
+      width: 8px;
+      height: 5px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      transform: rotate(-30deg);
+    }
+
+    .float-bead {
+      position: absolute;
+      border-radius: 50%;
+      animation: floatBead 6s ease-in-out infinite;
+      opacity: 0.7;
+    }
+
+    .float-bead::after {
+      content: '';
+      position: absolute;
+      top: 22%;
+      left: 28%;
+      width: 30%;
+      height: 20%;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      transform: rotate(-30deg);
+    }
+
+    @keyframes floatBead {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+
+    .hero-badge {
+      background: linear-gradient(135deg, var(--rosa), var(--lilas));
+      color: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--rosa), var(--lilas), var(--azul));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      color: #666;
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      font-weight: 600;
+    }
+
+    .hero-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rosa), var(--lilas), var(--azul), var(--verde));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      margin: 0 auto 2rem;
+      box-shadow: 0 20px 60px rgba(199,125,255,0.3);
+      animation: spinGlow 8s linear infinite;
+    }
+
+    @keyframes spinGlow {
+      0% { box-shadow: 0 20px 60px rgba(255,107,157,0.4); }
+      25% { box-shadow: 0 20px 60px rgba(199,125,255,0.4); }
+      50% { box-shadow: 0 20px 60px rgba(76,201,240,0.4); }
+      75% { box-shadow: 0 20px 60px rgba(86,207,176,0.4); }
+      100% { box-shadow: 0 20px 60px rgba(255,107,157,0.4); }
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(37,211,102,0.5);
+    }
+
+    .cta-btn svg { width: 24px; height: 24px; fill: white; }
+
+    .cta-note {
+      font-size: 0.85rem;
+      color: #999;
+      font-weight: 600;
+    }
+
+    /* ========== BEAD STRING DIVIDER ========== */
+    .bead-string {
+      width: 100%;
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bead-string::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #ddd;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+
+    .bs-bead {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      box-shadow: inset -3px -3px 6px rgba(0,0,0,0.15), inset 2px 2px 4px rgba(255,255,255,0.5);
+    }
+
+    /* ========== COMO FUNCIONA ========== */
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      text-align: center;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--rosa), var(--lilas));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #888;
+      font-weight: 600;
+      margin-bottom: 3rem;
+      font-size: 1rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s;
+      border-top: 4px solid transparent;
+    }
+
+    .step-card:hover { transform: translateY(-5px); }
+    .step-card:nth-child(1) { border-top-color: var(--rosa); }
+    .step-card:nth-child(2) { border-top-color: var(--lilas); }
+    .step-card:nth-child(3) { border-top-color: var(--azul); }
+    .step-card:nth-child(4) { border-top-color: var(--verde); }
+
+    .step-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+    .step-num {
+      background: linear-gradient(135deg, var(--rosa), var(--lilas));
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .step-card h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p { font-size: 0.9rem; color: #777; line-height: 1.5; }
+
+    /* ========== PERSONALIZE ========== */
+    .customize-section {
+      background: linear-gradient(135deg, #FFF0F8, #F5F0FF, #F0F9FF);
+      padding: 4rem 1.5rem;
+    }
+
+    .customize-inner { max-width: 900px; margin: 0 auto; }
+
+    .tags-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .tag {
+      padding: 0.5rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 2px solid transparent;
+      cursor: default;
+      transition: transform 0.15s;
+    }
+
+    .tag:hover { transform: scale(1.05); }
+
+    .tag-rosa { background: #FFE8F3; border-color: var(--rosa); color: var(--rosa); }
+    .tag-lilas { background: #F3E8FF; border-color: var(--lilas); color: var(--lilas); }
+    .tag-azul { background: #E8F6FF; border-color: var(--azul); color: var(--azul); }
+    .tag-verde { background: #E8FFF8; border-color: var(--verde); color: var(--verde); }
+    .tag-amarelo { background: #FFFBE8; border-color: var(--amarelo); color: #cc9900; }
+    .tag-laranja { background: #FFF3E8; border-color: var(--laranja); color: var(--laranja); }
+
+    /* ========== SIGNOS ========== */
+    .signos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .signo-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1rem 0.5rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+
+    .signo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(199,125,255,0.2);
+    }
+
+    .signo-card .signo-emoji { font-size: 2rem; display: block; margin-bottom: 0.3rem; }
+    .signo-card .signo-name { font-size: 0.75rem; font-weight: 700; color: #888; }
+
+    /* ========== DEPOIMENTO ========== */
+    .testimonials {
+      padding: 4rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .testi-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testi-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .testi-stars { color: var(--amarelo); font-size: 1rem; margin-bottom: 0.8rem; }
+    .testi-text { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1rem; font-style: italic; }
+    .testi-author { font-weight: 800; font-size: 0.85rem; color: var(--rosa); }
+
+    /* ========== CTA FINAL ========== */
+    .cta-final {
+      background: linear-gradient(135deg, var(--rosa), var(--lilas), var(--azul));
+      padding: 5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .cta-final p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 600;
+    }
+
+    .cta-final .cta-btn {
+      background: white;
+      color: #128C7E;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    .cta-final .cta-btn:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #333;
+      color: #aaa;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+    }
+
+    footer span { color: var(--rosa); font-weight: 700; }
+
+    /* ========== FLOATING BEADS ========== */
+    .fb1 { width: 50px; height: 50px; background: var(--rosa); top: 10%; left: 5%; animation-delay: 0s; }
+    .fb2 { width: 35px; height: 35px; background: var(--lilas); top: 20%; right: 8%; animation-delay: 1s; }
+    .fb3 { width: 45px; height: 45px; background: var(--azul); bottom: 25%; left: 3%; animation-delay: 2s; }
+    .fb4 { width: 30px; height: 30px; background: var(--verde); bottom: 15%; right: 5%; animation-delay: 0.5s; }
+    .fb5 { width: 20px; height: 20px; background: var(--amarelo); top: 45%; left: 8%; animation-delay: 1.5s; }
+    .fb6 { width: 25px; height: 25px; background: var(--laranja); top: 60%; right: 4%; animation-delay: 2.5s; }
+
+    @media (max-width: 600px) {
+      .steps { grid-template-columns: 1fr 1fr; }
+      .signos-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero" style="padding-top: 3rem;">
+  <!-- Floating beads -->
+  <div class="float-bead fb1"></div>
+  <div class="float-bead fb2"></div>
+  <div class="float-bead fb3"></div>
+  <div class="float-bead fb4"></div>
+  <div class="float-bead fb5"></div>
+  <div class="float-bead fb6"></div>
+
+  <div class="hero-badge">✨ Feito com amor, do jeitinho que você quer</div>
+
+  <div class="hero-img">🪡</div>
+
+  <h1>Lojinha da Isa</h1>
+  <p class="hero-sub">
+    Missangas personalizadas feitas à mão — do seu jeito, com as suas cores e com a energia do seu signo 🌟
+  </p>
+
+  <a href="https://wa.me/55XXXXXXXXXXX?text=Oi+Isa!+Quero+encomendar+uma+pulseira+personalizada+%F0%9F%8E%80" class="cta-btn" target="_blank">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    Fazer meu pedido no WhatsApp
+  </a>
+  <p class="cta-note">Responde rapidinho 💬 Entrega combinada</p>
+</section>
+
+<!-- Bead string divider -->
+<div class="bead-string">
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+</div>
+
+<!-- Como funciona -->
+<section>
+  <h2 class="section-title">Como funciona? 🤔</h2>
+  <p class="section-sub">É super fácil pedir a sua pulseirinha!</p>
+  <div class="steps">
+    <div class="step-card">
+      <span class="step-icon">💬</span>
+      <div class="step-num">1</div>
+      <h3>Manda mensagem</h3>
+      <p>Me manda um oi no WhatsApp e conta o que você quer</p>
+    </div>
+    <div class="step-card">
+      <span class="step-icon">🎨</span>
+      <div class="step-num">2</div>
+      <h3>Escolhe tudo</h3>
+      <p>Cor, signo, nome, estilo — do seu jeitinho mesmo!</p>
+    </div>
+    <div class="step-card">
+      <span class="step-icon">🪡</span>
+      <div class="step-num">3</div>
+      <h3>Eu faço pra você</h3>
+      <p>Com muito amor e cuidado, missanga por missanga</p>
+    </div>
+    <div class="step-card">
+      <span class="step-icon">📦</span>
+      <div class="step-num">4</div>
+      <h3>Recebe pronta!</h3>
+      <p>A pulseira dos sonhos chega até você combinamos a entrega</p>
+    </div>
+  </div>
+</section>
+
+<!-- Personalize -->
+<div class="customize-section">
+  <div class="customize-inner">
+    <h2 class="section-title">Personalize do seu jeito ✏️</h2>
+    <p class="section-sub">Escolha o que você mais gosta</p>
+
+    <div style="margin-bottom: 2rem;">
+      <p style="text-align:center; font-weight:700; color:#555; margin-bottom:1rem;">🎨 Cores disponíveis</p>
+      <div class="tags-grid">
+        <span class="tag tag-rosa">🩷 Rosa</span>
+        <span class="tag tag-lilas">💜 Lilás</span>
+        <span class="tag tag-azul">💙 Azul</span>
+        <span class="tag tag-verde">💚 Verde</span>
+        <span class="tag tag-amarelo">💛 Amarelo</span>
+        <span class="tag tag-laranja">🧡 Laranja</span>
+        <span class="tag tag-rosa">🤍 Branco</span>
+        <span class="tag" style="background:#333;color:white;border-color:#333;">🖤 Preto</span>
+        <span class="tag" style="background:#FFD700;color:#996600;border-color:#FFD700;">✨ Dourado</span>
+        <span class="tag" style="background:#E8E8E8;color:#888;border-color:#bbb;">⬜ Prata</span>
+      </div>
+    </div>
+
+    <div>
+      <p style="text-align:center; font-weight:700; color:#555; margin-bottom:1rem;">⭐ Pulseiras por signo</p>
+      <div class="signos-grid">
+        <div class="signo-card"><span class="signo-emoji">♈</span><span class="signo-name">Áries</span></div>
+        <div class="signo-card"><span class="signo-emoji">♉</span><span class="signo-name">Touro</span></div>
+        <div class="signo-card"><span class="signo-emoji">♊</span><span class="signo-name">Gêmeos</span></div>
+        <div class="signo-card"><span class="signo-emoji">♋</span><span class="signo-name">Câncer</span></div>
+        <div class="signo-card"><span class="signo-emoji">♌</span><span class="signo-name">Leão</span></div>
+        <div class="signo-card"><span class="signo-emoji">♍</span><span class="signo-name">Virgem</span></div>
+        <div class="signo-card"><span class="signo-emoji">♎</span><span class="signo-name">Libra</span></div>
+        <div class="signo-card"><span class="signo-emoji">♏</span><span class="signo-name">Escorpião</span></div>
+        <div class="signo-card"><span class="signo-emoji">♐</span><span class="signo-name">Sagitário</span></div>
+        <div class="signo-card"><span class="signo-emoji">♑</span><span class="signo-name">Capricórnio</span></div>
+        <div class="signo-card"><span class="signo-emoji">♒</span><span class="signo-name">Aquário</span></div>
+        <div class="signo-card"><span class="signo-emoji">♓</span><span class="signo-name">Peixes</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bead string divider -->
+<div class="bead-string">
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+  <div class="bs-bead" style="background:#C77DFF;"></div>
+  <div class="bs-bead" style="background:#4CC9F0;"></div>
+  <div class="bs-bead" style="background:#56CFB0;"></div>
+  <div class="bs-bead" style="background:#FFD166;"></div>
+  <div class="bs-bead" style="background:#FF9F43;"></div>
+  <div class="bs-bead" style="background:#FF6B9D;"></div>
+</div>
+
+<!-- Depoimentos -->
+<div class="testimonials">
+  <h2 class="section-title">Quem já pediu, amou! 💖</h2>
+  <p class="section-sub">Olha o que estão falando</p>
+  <div class="testi-cards">
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Amei minha pulseira de Áries! Ficou linda, as cores foram exatamente as que pedi. Super recomendo!"</p>
+      <div class="testi-author">— Maria Clara, 12 anos</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Pedi personalizada com meu nome e meu signo. Ficou perfeita! Já vou pedir outra pra minha amiga."</p>
+      <div class="testi-author">— Júlia, 10 anos</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"A Isa caprichou demais! Fiz como presente pra minha filha e ela ficou encantada com as cores."</p>
+      <div class="testi-author">— Mamãe da Sofia</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Final -->
+<div class="cta-final">
+  <div class="float-bead" style="width:60px;height:60px;background:rgba(255,255,255,0.15);top:10%;left:5%;animation-delay:0s;position:absolute;"></div>
+  <div class="float-bead" style="width:40px;height:40px;background:rgba(255,255,255,0.1);bottom:15%;right:8%;animation-delay:1s;position:absolute;"></div>
+
+  <h2>Pronta pra pedir a sua? 🎀</h2>
+  <p>Me chama no WhatsApp que eu faço uma pulseirinha linda só pra você!</p>
+
+  <a href="https://wa.me/55XXXXXXXXXXX?text=Oi+Isa!+Quero+encomendar+uma+pulseira+personalizada+%F0%9F%8E%80" class="cta-btn" target="_blank">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    Fazer meu pedido agora!
+  </a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Feito com 💖 pela <span>Isa</span> · Missangas artesanais e personalizadas</p>
+  <p style="margin-top:0.3rem; font-size:0.75rem;">© 2026 Lojinha da Isa · lojinhaisa.heitorcamine.com</p>
+</footer>
+
+</body>
+</html>
